@@ -1,25 +1,27 @@
 import { useState } from "react";
-import Card from "./components/Card";
-import CardContent from "./components/CardContent";
-import CardImg from "./components/CardImg";
-import ValidContent from "./components/ValidContent";
+
+import DisplayCard from "./components/DisplayCard";
+import SuccessCard from "./components/SuccessCard";
 
 const App = () => {
   const [isValid, setIsValid] = useState(false);
+  const [email, setEmail] = useState("");
 
   return (
     <main>
-      {!isValid && (
-        <Card className="form-card">
-          <CardContent isValid={isValid} setIsValid={setIsValid} />
-          <CardImg />
-        </Card>
-      )}
-
-      {isValid && (
-        <Card className="success-card">
-          <ValidContent />
-        </Card>
+      {isValid ? (
+        <SuccessCard
+          email={email}
+          setEmail={setEmail}
+          setIsValid={setIsValid}
+        />
+      ) : (
+        <DisplayCard
+          isValid={isValid}
+          setIsValid={setIsValid}
+          email={email}
+          setEmail={setEmail}
+        />
       )}
     </main>
   );

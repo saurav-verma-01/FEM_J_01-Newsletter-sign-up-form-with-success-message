@@ -1,8 +1,7 @@
 import { useState } from "react";
 import ListItem from "./ListItem";
 
-const CardContent = ({ setIsValid }) => {
-  const [email, setEmail] = useState("");
+const CardContent = ({ setIsValid, email, setEmail }) => {
   const [message, setMessage] = useState("");
   const list = [
     "Product discovery and building what matters",
@@ -24,7 +23,7 @@ const CardContent = ({ setIsValid }) => {
     }
 
     // If email is valid, clear the input and show success message
-    setEmail("");
+    // setEmail(e.target.value);
     setMessage("");
     setIsValid(true);
   };

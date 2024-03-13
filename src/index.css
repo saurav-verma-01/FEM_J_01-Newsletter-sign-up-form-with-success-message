@@ -38,22 +38,80 @@ main {
 
 /* Card Component */
 
-.card {
+.display-card {
   border-radius: 2.25rem;
-  background: #fff;
+  background: var(--white);
   box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-
   display: grid;
   grid-template-columns: 54fr 46fr;
+
+  width: 100%;
+  max-width: 58rem;
+  height: 40rem;
 }
 .success-card {
   width: 100%;
   max-width: 31.5rem;
+  /* height: 32.5rem; */
+  background: var(--white);
+  padding: 4rem;
+  padding-top: 3rem;
+  border-radius: 2.25rem;
+  box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
 }
-.form-card {
+
+.success-card img {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  margin-bottom: 2.5rem;
+}
+.success-card h1 {
+  color: var(--dark-slate-grey);
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.success-card p {
+  color: var(--dark-slate-grey);
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+
+.success-email {
+  font-weight: 700;
+}
+
+.success-card button {
+  height: 3.5rem;
   width: 100%;
-  max-width: 58rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: var(--dark-slate-grey);
+  color: var(--white);
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  outline: none;
+  border: 1px solid transparent;
+  transition: all 0.4s ease-in;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.success-card button:is(:hover, :focus-visible) {
+  background: linear-gradient(#ff6a3a, #ff527b);
+  box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
 }
 
 .card-content {
@@ -181,9 +239,4 @@ main {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-.valid-content {
-  width: 31.5rem;
-  background-color: #ff6a3a;
 }
