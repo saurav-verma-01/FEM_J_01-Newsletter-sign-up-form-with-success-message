@@ -1,68 +1,165 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --tomato: hsl(4, 100%, 67%);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+*,
+*::after,
+*::before {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background-color: #36384d;
+
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Card Component */
+
+.card {
+  border-radius: 2.25rem;
+  background: #fff;
+  box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 58rem;
+  max-height: 40rem;
+
+  display: grid;
+  grid-template-columns: 54fr 46fr;
+}
+.card-content {
+  color: var(--dark-slate-grey);
+  padding: 6rem 4rem;
+}
+.card-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+.card-content p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.card-content li {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.card-content ul {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.list-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.list-icon {
+  width: 1.3125rem;
+  height: 1.3125rem;
+  flex-shrink: 0;
+}
+
+.newsletter-form .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.newsletter-form label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.newsletter-form input,
+.newsletter-form button {
+  height: 3.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 1.5rem;
+}
+
+.newsletter-form input {
+  border: 1px solid var(--grey-25, rgba(25, 24, 43, 0.25));
+  outline: none;
+
+  color: var(--dark-slate-grey);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.5s ease-in-out;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.newsletter-form input:is(:hover, :focus-visible) {
+  border-color: var(--dark-slate-grey);
+}
+
+.newsletter-form button {
+  background: var(--dark-slate-grey);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  outline: none;
+}
+
+.newsletter-form button:is(:hover, :focus-visible) {
+  background: linear-gradient(#ff6a3a, #ff527b);
+  box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
+  border: 1px solid transparent;
+}
+
+.card-img-container {
+  padding: 1.5rem;
+  padding-left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
